@@ -1,6 +1,7 @@
 import express from "express";
 
 import {
+  checkAuth,
   login,
   logout,
   signup,
@@ -14,5 +15,7 @@ router.post("/login", login);
 router.post("/logout", logout);
 
 router.put("/update", updateProfile);
+
+router.get("/check", checkAuth);
 
 export default router;
