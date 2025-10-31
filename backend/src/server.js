@@ -4,6 +4,7 @@ import cookieparser from "cookie-parser";
 import cors from "cors";
 
 import authRoutes from "../src/routes/auth.routes.js";
+import messageRoutes from "../src/routes/message.routes.js";
 import { connectDB } from "./lib/db.js";
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(cookieparser());
 
 //routes
 app.use("api/auth", authRoutes);
+app.use("api/message", messageRoutes);
 
 app.use(
   cors({
