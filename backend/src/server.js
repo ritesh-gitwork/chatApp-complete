@@ -17,16 +17,16 @@ app.use(express.json());
 
 app.use(cookieparser());
 
-//routes
-app.use("api/auth", authRoutes);
-app.use("api/message", messageRoutes);
-
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173", "http://localhost:5174"],
     credentials: true,
   })
 );
+
+//routes
+app.use("/api/auth", authRoutes);
+app.use("/api/message", messageRoutes);
 
 connectDB();
 
